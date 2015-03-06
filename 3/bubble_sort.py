@@ -3,28 +3,22 @@
 
 import random
 
-data_count = 10
-data_min = 0
-data_max = 100
-
 random.seed(1)
-data = [random.randint(data_min,data_max) for _ in range(data_count)]
+A = [random.randint(0,100) for _ in range(10)]
 
 if __name__ == '__main__':
     
-    print("input ", data)
+    print("input ", A)
     sw = 0
     flag = True
-    N = len(data)
+    N = len(A)
     for i in range(0, N):
         if flag == False:
             break
         flag = False
         for j in range(N-1, i, -1):
-            if data[j] < data[j-1]:
-                temp = data[j-1]
-                data[j-1] = data[j]
-                data[j] = temp
+            if A[j] < A[j-1]:
+                A[j-1], A[j] = A[j], A[j-1]
                 flag = True
-        print("trace ", data)
-    print("result", data)
+        print("trace ", A)
+    print("result", A)

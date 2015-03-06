@@ -5,23 +5,19 @@
 
 import random
 
-data_count = 10
-data_min = 0
-data_max = 100
-
 random.seed(1)
-data = [random.randint(data_min,data_max) for _ in range(data_count)]
+A = [random.randint(0,100) for _ in range(10)]
 
 if __name__ == '__main__':
     
-    print("input ", data)
+    print("input ", A)
     i = 0
-    for i in range(1, len(data)):
-        val = data[i] # 挿入対象の値
+    for i in range(1, len(A)):
+        val = A[i] # 挿入対象の値
         j = i - 1
-        while j >= 0 and data[j] > val:
-            data[j + 1] = data[j]
+        while j >= 0 and A[j] > val:
+            A[j + 1] = A[j]
             j -= 1
-        data[j+1] = val
-        print("trace ", data)
-    print("result", data)
+        A[j+1] = val
+        print("trace ", A)
+    print("result", A)
