@@ -1,4 +1,5 @@
 #stack
+#test
 
 expression = "1 2 + 3 4 - *"
 
